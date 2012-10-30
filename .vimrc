@@ -68,7 +68,7 @@ let Rq_Initiales = "DB"
 
 " Load pathogen with docs for all plugins
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 " I want all those lovely colors!
 syntax on
