@@ -49,13 +49,13 @@ set wildignore+=*.egg-info/**
 set completeopt=menuone,longest,preview
 set pumheight=6                     " Keep a small completion window
 
-" Reading/Writing
+" Reading/Writing.
 set noautowrite                     " Never write a file unless I request it
 set noautowriteall                  " NEVER.
 set noautoread                      " Don't automatically read changed files
 set ffs=unix,dos,mac                " Try recognizing line endings.
 
-" Messages, Info, Status
+" Messages, Info, Status.
 set laststatus=2                    " allways show status line
 set confirm                         " Prompt if closing with unsaved changes
 set report=0                        " Commands always print changed line count
@@ -63,10 +63,10 @@ set shortmess+=a                    " Show modified/readonly/written.
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})%=%1*%{fugitive#statusline()}%*
 
 " Various global variables.
-let Rq_Auteur = "David Blanchet <david.blanchet@free.fr>" 
-let Rq_Initiales = "DB" 
+let Rq_Auteur = "David Blanchet <david.blanchet@free.fr>"
+let Rq_Initiales = "DB"
 
-" Load pathogen with docs for all plugins
+" Load pathogen with docs for all plugins.
 filetype off
 call pathogen#infect()
 
@@ -123,7 +123,7 @@ nnoremap <silent> <F9> :TlistSync<CR>
 
 nnoremap <F2> :split %.rq<CR>
 
-" open/close the quickfix window
+" Open/close the quickfix window.
 nnoremap <leader>c :copen<CR>
 nnoremap <leader>cc :cclose<CR>
 
@@ -132,10 +132,10 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
-" Remove trailing whitespace on <leader>S
+" Remove trailing whitespace on <leader>S.
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Select the item in the list with enter
+" Select the item in the list with enter.
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Clever completion key.
@@ -154,16 +154,15 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
             \ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
 
-" Python
+" Python.
 
-"au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-" Don't let pyflakes use the quickfix window
+" Don't let pyflakes use the quickfix window.
 let g:pyflakes_use_quickfix = 0
 
-" Add the virtualenv's site-packages to vim path
+" Add the virtualenv's site-packages to vim path.
 py << EOF
 import os.path
 import sys
@@ -180,40 +179,22 @@ if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
 
-" run py.test's
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
-
-" Snipmate
-
-" Don't allow snipmate to take over tab.
-autocmd VimEnter * ino <c-j> <c-r>=TriggerSnippet()<cr>
-autocmd VimEnter * ino <D-j> <c-r>=TriggerSnippet()<cr>
 " Use tab to scroll through autocomplete menus.
 autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
 autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
-snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
-snor <D-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
+
+" Show preview window when using autocomplpop.
 let g:acp_completeoptPreview=1
 
-" Run pep8
+" Run pep8.
 let g:pep8_map='<leader>8'
+"autocmd FileType python map <buffer> <leader>8 :call Flake8()<CR>
 
-" Open NerdTree
+" Open NerdTree.
 map <leader>n :NERDTreeToggle<CR>
 
-" Run command-t file search
+" Run command-t file search.
 map <leader>f :CommandT<CR>
-
-" Ack searching
-if executable('ack')
-  set grepprg=ack         " replace the default grep program with ack
-  nmap <leader>a <Esc>:Ack!
-endif
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
@@ -225,3 +206,4 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 " Prevent too much flashing.
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+

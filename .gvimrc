@@ -1,5 +1,4 @@
 
-
 " Use smaller font while diffing,
 " so all files fit in screen.
 let in_diff_mode = 0
