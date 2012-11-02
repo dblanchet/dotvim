@@ -69,6 +69,9 @@ let Rq_Initiales = "DB"
 " Load pathogen with docs for all plugins.
 filetype off
 call pathogen#infect()
+" This one should not be unconditional,
+" only when new bundles are installed.
+"call pathogen#helptags()
 
 " I want all those lovely colors!
 syntax on
