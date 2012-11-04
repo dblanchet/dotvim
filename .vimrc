@@ -162,8 +162,6 @@ inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Es
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-" Don't let pyflakes use the quickfix window.
-let g:pyflakes_use_quickfix = 0
 
 " Add the virtualenv's site-packages to vim path.
 py << EOF
@@ -189,9 +187,8 @@ autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
 " Show preview window when using autocomplpop.
 let g:acp_completeoptPreview=1
 
-" Run pep8.
-let g:pep8_map='<leader>8'
-"autocmd FileType python map <buffer> <leader>8 :call Flake8()<CR>
+" Run Flake8.
+autocmd FileType python map <buffer> <leader>8 :call Flake8()<CR>
 
 " Open NerdTree.
 map <leader>n :NERDTreeToggle<CR>
