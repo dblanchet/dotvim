@@ -83,6 +83,7 @@ endif
 highlight User1 guifg=Yellow guibg=Black
 
 " Let's go.
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 au BufRead,BufNewFile *.go set filetype=go
 set rtp+=/usr/local/go/misc/vim
 
