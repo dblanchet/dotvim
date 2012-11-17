@@ -121,9 +121,8 @@ map <S-Tab> <<
 nnoremap ù <C-]>
 nnoremap gù g]
 
-" Taglist mappings.
-nnoremap <silent> <F8> :Tlist<CR>
-nnoremap <silent> <F9> :TlistSync<CR>
+" Tagbar mappings.
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
 nnoremap <F2> :split %.rq<CR>
 
