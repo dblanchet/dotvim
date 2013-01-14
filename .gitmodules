@@ -7,6 +7,7 @@
 [submodule "bundle/git"]
 	path = bundle/git
 	url = https://github.com/tpope/vim-git.git
+	ignore = dirty
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -28,9 +29,11 @@
 [submodule "bundle/acp"]
 	path = bundle/acp
 	url = https://github.com/vim-scripts/AutoComplPop.git
+	ignore = dirty
 [submodule "bundle/flake8"]
 	path = bundle/flake8
 	url = https://github.com/nvie/vim-flake8.git
+	ignore = dirty
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
