@@ -49,3 +49,6 @@
 [submodule "bundle/addon-tlib"]
 	path = bundle/addon-tlib
 	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/help-fr"]
+	path = bundle/help-fr
+	url = git://github.com/dblanchet/vim-help-fr
