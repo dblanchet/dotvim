@@ -55,3 +55,6 @@
 [submodule "bundle/DirDiff"]
 	path = bundle/DirDiff
 	url = https://github.com/vim-scripts/DirDiff.vim.git
+[submodule "bundle/gitgutter"]
+	path = bundle/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
