@@ -7,13 +7,13 @@ if in_diff_mode > 0
   if has("win32")
     set guifont=Consolas:h9:cANSI
   elseif has("mac")
-    set guifont=Consolas:h16 " Big, nice Mac screens...
+    set guifont=Consolas:h14 " Big, nice Mac screens...
   endif
 else
   if has("win32")
     set guifont=:h18
   elseif has("mac")
-    set guifont=Consolas:h20
+    set guifont=Consolas:h18
   endif
 endif
 unlet in_diff_mode
